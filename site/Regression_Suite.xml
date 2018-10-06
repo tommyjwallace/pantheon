@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PantheonRegression" verbose="1">
+
+    <test name="Pantheon Regression Test">
+        <groups>
+            <run>
+                <include name="Regression"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.HeaderTest"></class>
+            <class name="tests.PledgeTest"></class>
+        </classes>
+    </test>
+
+</suite>
