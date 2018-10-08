@@ -14,10 +14,6 @@ public class BasePage {
     }
 
     // Global Methods
-    public void sleepTime(int milliseconds) throws InterruptedException {
-        Thread.sleep(milliseconds);
-    }
-
     public void waitForURLContains(String url) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlContains(url));

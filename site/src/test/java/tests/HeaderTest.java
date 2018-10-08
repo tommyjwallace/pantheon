@@ -8,6 +8,12 @@ public class HeaderTest extends PantheonAbstractTest {
     @Test(enabled = true, groups = {"Smoke", "Regression"})
     public void verifyHeaderLinks() {
 
+        /*  Test Case: Verify Header Links
+            Author: Tom Wallace
+            Date:   10/7/2018
+         */
+        print("Test Case: Verify Header Links");
+
         // Navigate to Home page
         homePage.openHomePage();
         Assert.assertTrue(homePage.isHomePageDisplayed());
@@ -53,4 +59,5 @@ public class HeaderTest extends PantheonAbstractTest {
         Assert.assertTrue(homePage.isHomePageDisplayed());
         print("Navigated to Home page");
     }
+
 }

@@ -8,6 +8,12 @@ public class PledgeTest extends PantheonAbstractTest {
     @Test(enabled = true, groups = {"Smoke", "Regression"})
     public void verifySupporterPledges() {
 
+        /*  Test Case: Verify Supporter Pledges
+            Author: Tom Wallace
+            Date:   10/8/2018
+         */
+        print("Test Case: Verify Supporter Pledges");
+
         // Navigate to Home page
         homePage.openHomePage();
         Assert.assertTrue(homePage.isHomePageDisplayed());
@@ -20,20 +26,34 @@ public class PledgeTest extends PantheonAbstractTest {
 
         // Click Supporter Pledges link
         pledgePage.clickSupporterPledgesLink();
+        Assert.assertTrue(pledgePage.isSupporterSectionDisplayed());
+        print("Navigated to Supporter section");
 
-        // TODO
-        // Verify Support Pledge page displayed
         // Verify Watcher's Pledge data
+        Assert.assertEquals(pledgePage.getWatchersPledgeAmount(), pledgeData.watchersPledgeAmount());
+        print("Verified Watcher's Pledge amount = " + pledgeData.watchersPledgeAmount());
+
+        // Verify Keeper's Pledge data
+        Assert.assertEquals(pledgePage.getKeepersPledgeAmount(), pledgeData.keepersPledgeAmount());
+        print("Verified Keeper's Pledge amount = " + pledgeData.keepersPledgeAmount());
+
+        // Verify Protector's Pledge data
+        Assert.assertEquals(pledgePage.getProtectorsPledgeAmount(), pledgeData.protectorsPledgeAmount());
+        print("Verified Protector's Pledge amount = " + pledgeData.protectorsPledgeAmount());
 
         // Click Buy Watcher's Pledge link
-        // Verify Subscription Plan page displayed
+        pledgePage.clickBuyWatchersPledgeLink();
+        Assert.assertTrue(subscriptionPage.isSubscriptionPageDisplayed());
+        print("Navigated to Subscription page");
 
-        // Click Watcher's Pledge (One-time fee of $50.00) radio button
+        // Select Watcher's Pledge option
+        subscriptionPage.clickWatchersPledgeOption();
+        subscriptionPage.clickSubmitButton();
+        print("Selected Watcher's Pledge option, then clicked Submit");
 
-        // Click Continue button
         // Verify Create Account page displayed
-        // Verify Email Address textbox displayed
-        // Verify Join button displayed
-
+        Assert.assertTrue(createAccountPage.isCreateAccountPageDisplayed());
+        print("Create Account page displayed");
     }
+
 }

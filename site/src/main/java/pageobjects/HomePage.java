@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import static util.Driver.driver;
 
 public class HomePage extends BasePage {
+
     // Web Elements
     @FindBy(css = "#header-part > div > div > div > ul > li:nth-child(2) > a")
     WebElement lnkHeaderLore;
@@ -29,12 +30,11 @@ public class HomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    // Page Methods - Open Page
+    // Page Methods
     public void openHomePage() {
         driver.get(baseUrl());
     }
 
-    // Page Methods - Is Page Displayed
     public boolean isHomePageDisplayed() {
         if(driver.getCurrentUrl().contains("https://pantheonmmo.com")) {
             return true;
@@ -82,7 +82,6 @@ public class HomePage extends BasePage {
         return false;
     }
 
-    //Page Methods - Click Links
     public void clickHeaderLoreLink() {
         lnkHeaderLore.click();
     }

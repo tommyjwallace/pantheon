@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import static util.Driver.driver;
 
 public class ForumsPage extends BasePage {
+
     // Web Elements
     @FindBy(css = "#header-part > div > a > img")
     WebElement lnkHeaderImage;
